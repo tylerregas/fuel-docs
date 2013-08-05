@@ -13,10 +13,12 @@ Additionally, MySQL has stopped working.
 
 #. Start corosync manually ``service corosync start``.
 
-#. Run ``ps -ef | grep mysql`` and kill ALL(!) **mysqld** and **mysqld_safe** processes.
+#. Run ``ps -ef | grep mysql`` and kill ALL(!) **mysqld** and 
+**mysqld_safe** processes.
 
 #. Wait while pacemaker starts mysql processes again.
 	* You can check it with ``ps -ef | grep mysql`` command.
 	* If it doesn't start, run ``crm resource p_mysql`` start.
 
-#. Check with ``crm status`` command that this host is part of the cluster and p_mysql is not within "Failed actions".
+#. Check with ``crm status`` command that this host is part of the cluster 
+and p_mysql is not within "Failed actions".
